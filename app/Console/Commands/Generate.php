@@ -23,9 +23,9 @@ class Generate extends ExtendedCommand
      *
      * @return int
      */
-    public function handle()
+    public function handle(): int
     {
-        $this->info(static::$appName);
+        $this->info(static::$appName . trans('messages.info.boot'));
         return 0;
     }
 }
