@@ -11,10 +11,11 @@ class ExtendedCommand extends Command
 
     protected $description = 'Basic extended command class. Do not run this command.';
 
-    public function __construct($name = 'abstract')
+    public function __construct($name = 'abstract', $category = false)
     {
         static::$appName = Config::get('app.name');
-        $this->signature = static::$appName . ':' . $name;
+        $category ?: $category = static::$appName;
+        $this->signature = $category . ':' . $name;
         parent::__construct();
     }
 }
